@@ -14,19 +14,19 @@ export default function Home() {
           <figcaption style={{ color: "#666" }}>—  entrepreneur</figcaption>
         </figure>
 
-        <figure style={{ margin: "12px 0" }}>
+        {/* <figure style={{ margin: "12px 0" }}>
           <blockquote style={{ margin: 0 }}>
             “saved me three aisle laps and one impulse rotisserie chicken.”
           </blockquote>
           <figcaption style={{ color: "#666" }}>— optimizer</figcaption>
-        </figure>
-
+        </figure> */}
+{/* 
         <figure style={{ margin: "12px 0" }}>
           <blockquote style={{ margin: 0 }}>
             “finally a reason to open my email that isn’t ‘reset your password’.”
           </blockquote>
           <figcaption style={{ color: "#666" }}>— 9999 email notifications guy</figcaption>
-        </figure>
+        </figure> */}
       </section>
     </main>
   );
