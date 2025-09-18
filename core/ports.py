@@ -1,0 +1,9 @@
+from typing import Protocol
+from .models import Preference, SaleItem
+
+class PrefsRepo(Protocol):
+    def save() -> None: ...
+    def find_by_email(self, email: str) -> list[Preference]: ...
+
+class SalesFeed(Protocol):
+    def all(self) -> list[SaleItem]: ...
