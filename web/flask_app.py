@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
 from core.matching import preview_for_email
 from adapters.file_sales import FileSalesFeed
@@ -14,7 +14,7 @@ repo = SqlitePrefsRepo() # will swap later for DynamoDB
 
 @app.get("/")
 def hello_world():
-    return "<p> Hellow, world! </p>"
+    return "<p> Hellooooo, world! </p>"
 
 @app.get("/api/sales")
 def list_sales():
@@ -23,6 +23,8 @@ def list_sales():
 @app.post("/api/preferences")
 def create_pref():
     b = request.get_json(force=True)
+    if not b or "email" not in b:
+        abort(400, description="email required")
     repo.save(b["email"], b.get("categories", []), b.get("keywords", []))
     return {"ok": True}, 201
 
@@ -34,7 +36,3 @@ def preview():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-# @app.route("/")
-# def hello_world():
-#     return "<p>Hello, World!</p>"
