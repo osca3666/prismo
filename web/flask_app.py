@@ -7,8 +7,7 @@ from adapters.sqlite_repo import SqlitePrefsRepo
 
 
 app = Flask(__name__)
-CORS(app) # lets a front end on another origin call this app
-
+CORS(app)
 sales = FileSalesFeed("data/costco-sales.json")
 repo = SqlitePrefsRepo() # will swap later for DynamoDB
 
